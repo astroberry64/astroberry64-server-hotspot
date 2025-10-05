@@ -1,5 +1,5 @@
 #!/bin/bash
-# postinst script for astroberry-server-hotspot
+# postinst script for astroberry64-server-hotspot
 
 RED='\033[0;31m'
 NC='\033[0m'
