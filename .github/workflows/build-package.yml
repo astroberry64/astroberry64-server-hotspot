@@ -83,12 +83,12 @@ jobs:
 
         # Commit and push
         git add dists/trixie-testing pool
-        git commit -m "$(cat <<'EOF'
-Auto-add $(basename ${{ github.workspace }}/build/*.deb) to testing suite
+
+        COMMIT_MSG="Auto-add $(basename ${{ github.workspace }}/build/*.deb) to testing suite
 
 Built from ${{ github.repository }}@${{ github.sha }}
 
-🤖 Automated build via GitHub Actions
-EOF
-)" || echo "No changes to commit"
+🤖 Automated build via GitHub Actions"
+
+        git commit -m "$COMMIT_MSG" || echo "No changes to commit"
         git push origin main || echo "Nothing to push"
