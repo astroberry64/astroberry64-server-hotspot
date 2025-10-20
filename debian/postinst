@@ -4,7 +4,8 @@
 RED='\033[0;31m'
 NC='\033[0m'
 
-mv -f /etc/wpa_supplicant/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf.bak
+# Note: No need to disable wpa_supplicant - it doesn't exist in Raspberry Pi OS Trixie+
+# NetworkManager is the default since Bookworm (Debian 12)
 
 chmod 600 /etc/NetworkManager/system-connections/HotSpot.nmconnection
 systemctl restart NetworkManager.service
